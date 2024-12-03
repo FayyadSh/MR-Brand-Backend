@@ -916,15 +916,10 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    products: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::product.product'
-    >;
     wishlist: Attribute.Relation<
       'plugin::users-permissions.user',
-      'oneToMany',
-      'api::brand.brand'
+      'oneToOne',
+      'api::product.product'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
