@@ -65,15 +65,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
-    },
     "wishlist": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::brand.brand"
+      "target": "api::product.product"
     }
   }
 }
