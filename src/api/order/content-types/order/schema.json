@@ -15,9 +15,6 @@
     "username": {
       "type": "string"
     },
-    "quantities": {
-      "type": "string"
-    },
     "total": {
       "type": "float"
     },
