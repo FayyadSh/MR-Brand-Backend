@@ -405,13 +405,9 @@ export interface ApiOrderOrder extends Schema.CollectionType {
   };
   attributes: {
     username: Attribute.String;
-    products: Attribute.Relation<
-      'api::order.order',
-      'manyToMany',
-      'api::product.product'
-    >;
     quantities: Attribute.String;
     total: Attribute.Float;
+    products: Attribute.Component<'order-item.order-item', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -449,11 +445,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     price: Attribute.Decimal;
     images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     brand: Attribute.String;
-    orders: Attribute.Relation<
-      'api::product.product',
-      'manyToMany',
-      'api::order.order'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
